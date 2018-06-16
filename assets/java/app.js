@@ -48,4 +48,40 @@ function submitBtn() {
 }
 
 
+var table = $("<table style='width: 100%'>");
+table.attr("id", "employee-table");
+
+var tr = $("<tr>");
+
+var th = $("<th>"); th.text("Employee Name"); tr.append(th);
+var th1 = $("<th>"); th1.text("Role"); tr.append(th1);
+var th2 = $("<th>"); th2.text("Start Date"); tr.append(th2);
+var th3 = $("<th>"); th3.text("Monthly Rate"); tr.append(th3);
+
+table.append(tr);
+
+$("#employee-table-div").append(table);
+
+
+
+database.ref("/employees").on("child_added", function(snapshot) {
+
+    console.log(snapshot.val());
+
+    var tr = $("<tr>");
+
+    var td = $("<td>"); td.text(snapshot.val().name); tr.append(td);
+    var td1 = $("<td>"); td1.text(snapshot.val().role); tr.append(td1);
+    var td2 = $("<td>"); td2.text(snapshot.val().stDate); tr.append(td2);
+    var td3 = $("<td>"); td3.text(snapshot.val().mRate); tr.append(td3);
+
+    $("#employee-table").append(tr);
+
+
+    
+   
+
+    
+})
+
 $("#submit-btn").on("click", submitBtn);
