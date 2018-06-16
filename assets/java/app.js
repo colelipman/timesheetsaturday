@@ -58,6 +58,7 @@ var th1 = $("<th>"); th1.text("Role"); tr.append(th1);
 var th2 = $("<th>"); th2.text("Start Date"); tr.append(th2);
 var th3 = $("<th>"); th3.text("Monthly Rate"); tr.append(th3);
 
+
 table.append(tr);
 
 $("#employee-table-div").append(table);
@@ -75,13 +76,37 @@ database.ref("/employees").on("child_added", function(snapshot) {
     var td2 = $("<td>"); td2.text(snapshot.val().stDate); tr.append(td2);
     var td3 = $("<td>"); td3.text(snapshot.val().mRate); tr.append(td3);
 
-    $("#employee-table").append(tr);
-
-
-    
    
 
     
+
+    var startM = moment(snapshot.val().stDate, "MM/DD/YYYY");
+
+    var monthsWorked = moment().diff(startM, "months");
+
+    console.log(monthsWorked);
+
+    var totalBilled = monthsWorked * parseInt(snapshot.val().mRate);
+
+    console.log(totalBilled);
+
+    var td4 = $("<td>"); td4.text(monthsWorked); tr.append(td4);
+    var td5 = $("<td>"); td5.text(totalBilled); tr.append(td5);
+
+    $("#employee-table").append(tr);
+
+
+
+
+
+
+
+
+
+
+    
 })
+
+
 
 $("#submit-btn").on("click", submitBtn);
