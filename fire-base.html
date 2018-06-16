@@ -1,0 +1,61 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+   <link rel="stylesheet" href="assets/css/style.css">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Employee Date Management</h1>
+            <br>
+            <h3>A Comprehensive Directory of Employee Billable Hours</h3>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Current Employees</h3>
+        <div class="row">
+            <div id="employee-table"></div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <form>
+            <div class="form-group">
+                <label for="employee-name">Employee Name</label>
+                <input type="text" class="form-control" id="employee-name" aria-describedby="emailHelp" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role</label>
+                <input type="text" class="form-control" id="role" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">Start Date (DD/MM/YY - ex: 01/01/89)</label>
+                <input type="text" class="form-control" id="start-date" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="monthly-rate">Monthly Rate</label>
+                <input type="number" class="form-control" id="monthly-rate" placeholder="">
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+        </form>
+    </div>
+
+
+</body>
+
+
+</html>
